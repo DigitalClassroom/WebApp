@@ -4,23 +4,32 @@
     ViewData["Title"] = "Lesson Page";
 }
 
+<div>
     <div>
-        <div>
-            <span> @Html.DisplayFor(m => m.Subject)</span>
-        </div>
-        <div>
-            <span>bei @Html.DisplayFor(m => m.Teacher)</span>
-        </div>
+        <span> @Html.DisplayFor(m => m.Subject)</span>
+    </div>
+    <div>
+        <span>bei @Html.DisplayFor(m => m.Teacher)</span>
+    </div>
 
 
-        <h1>Unterrichtsstunde @Html.DisplayFor(m => m.Title)</h1>
-        <h2>Klasse: @Html.DisplayFor(m => m.Class)</h2>
+    <h1>Unterrichtsstunde @Html.DisplayFor(m => m.Title)</h1>
+    <h2>Klasse: @Html.DisplayFor(m => m.Class)</h2>
 
 
-        <table>
-            <thead>
+    <table>
+        <thead>
+            <tr>
+                <th>Aufgabe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model.Chapter)
+            {
                 <tr>
-                    <th>Aufgabe</th>
+                    <td>
+                        <a asp-action="Chapter" asp-controller="Lesson" asp-route-id="@c.Id">@c.Title</a>
+                    </td>
                 </tr>
             }
         </tbody>
