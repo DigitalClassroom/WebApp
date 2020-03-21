@@ -1,0 +1,23 @@
+﻿@using DigitalClassroomWebApp.Models
+@model Lesson
+@{
+    ViewData["Title"] = "IndexPage";
+}
+
+<h1>Unterrichtsstunde  @Model.Title</h1>
+<h2>Klasse: @Model.Class</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Aufgabe</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var point in Model.Points)
+        {
+        <tr>
+            <td>@point.Title</td>
+        </tr>
+        }
+    </tbody>
+</table>
