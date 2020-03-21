@@ -1,0 +1,58 @@
+﻿@using DigitalClassroomWebApp.Models
+@model LessonChapter
+@{
+    ViewData["Title"] = "IndexPage";
+}
+
+<div class="row">
+    <span> @Html.DisplayFor(m => m.Lesson.Subject)</span>
+</div>
+<div class="row">
+    <span>bei @Html.DisplayFor(m => m.Lesson.Teacher)</span>
+</div>
+
+<!-- Progress -->
+<div class="row progress">
+    <div class="progress-bar" role="progressbar"
+         style="width: @Model.Status%"
+         aria-valuenow="@Model.Status"
+         aria-valuemin="0"
+         aria-valuemax="100"></div>
+</div>
+
+<div class="row border" >
+    <div class="col-md-8">
+        <h3>Content</h3>
+    </div>
+    <div class="col-md-4">
+        <div class="accordion" id="accordionExample">
+            @foreach (var item in Model.Tasks)
+            {
+                string toggleId = $"task{item.Id}";
+                string headingId = $"heading{item.Id}";
+
+                <div class="card">
+                    <div class="card-header" id="@headingId">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button"
+                                    data-toggle="collapse"
+                                    data-target="#@toggleId"
+                                    aria-expanded="true"
+                                    aria-controls="@toggleId">
+                                @item.Title
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="@toggleId" class="collapse"
+                         aria-labelledby="@headingId"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            @item.Content
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

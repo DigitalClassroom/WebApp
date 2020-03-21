@@ -1,36 +1,33 @@
-﻿using DigitalClassroomWebApp.Models;
+﻿using DigitalClassroomWebApp.DataPresenter;
+using DigitalClassroomWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DigitalClassroomWebApp.Controllers
 {
     public class LessonController : Controller
     {
-        public IActionResult Index()
+        private readonly ILessonDataPresenter lessonDataPresenter;
+
+        public LessonController(ILessonDataPresenter lessonDataPresenter)
         {
-            Lesson lesson = new Lesson()
-            {
-                Title = "Hallo Welt",
-                Class = "5a",
-            };
+            this.lessonDataPresenter = lessonDataPresenter
+                ?? throw new ArgumentNullException(nameof(lessonDataPresenter));
+        }
 
-            lesson.Points.Add(new LessonPoint()
-            {
-                Title = "Aufgabe 1",
-            });
-
-            lesson.Points.Add(new LessonPoint()
-            {
-                Title = "Aufgabe 2",
-            });
-
-            lesson.Points.Add(new LessonPoint()
-            {
-                Title = "Aufgabe 3",
-            });
-
-
+        public IActionResult Index(int id = 0)
+        {
+            Lesson lesson = lessonDataPresenter.GetLesson(id);
             ViewData["Title"] = lesson.Title;
             return View(lesson);
+        }
+
+        public IActionResult Chapter(int id = 1)
+        {
+            LessonChapter c = lessonDataPresenter.GetLessonChapter(id);
+
+            ViewData["Title"] = c.Title;
+            return View(c);
         }
     }
 }
