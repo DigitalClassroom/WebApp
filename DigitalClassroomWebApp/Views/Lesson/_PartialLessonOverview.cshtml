@@ -1,0 +1,46 @@
+﻿@using DigitalClassroomWebApp.Models
+@model Lesson
+@{
+    ViewData["Title"] = "IndexPage";
+    string lessonGridTemplate = String.Join(" ", Enumerable.Repeat("auto", Model.Chapter.Count));
+}
+
+<div class="row my-3 border rounded" style="display:grid;grid-template-columns:@lessonGridTemplate;">
+    @foreach (var chapter in Model.Chapter)
+    {
+        string gridTemplate = String.Join(" ", Enumerable.Repeat("auto", chapter.Tasks.Count + 1));
+        int barWidth = chapter.Status == 100 ? 100 : chapter.Tasks.Count(o => o.Done) * 100 / (chapter.Tasks.Count + 1);
+        <a class="Link" asp-controller="Lesson" asp-action="Chapter" asp-route-id="@chapter.Id">
+            <div style="width: 100%; height: 32px;">
+                <div style="display:grid;grid-template-columns:@gridTemplate;z-index:100;">
+                    @foreach (var task in chapter.Tasks)
+                    {
+                        @if (task.Done)
+                        {
+                            <div class="Task Done"></div>
+                        }
+                        else
+                        {
+                            <div class="Task"></div>
+                        }
+                    }
+
+                    @if (chapter.Status == 100)
+                    {
+                        <div class="Chapter Done"></div>
+                    }
+                    else
+                    {
+                        <div class="Chapter"></div>
+                    }
+                </div>
+                <div class="Bar" style="width:@barWidth%">
+                </div>
+
+            </div>
+            <div style="width:100%;text-align:center">
+                <span>@chapter.Title</span>
+            </div>
+        </a>
+    }
+</div>

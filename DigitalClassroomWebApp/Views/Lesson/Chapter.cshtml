@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "IndexPage";
 }
-
+@section Styles {
+    <link href="~/css/LessonProgres.css" rel="stylesheet" type="text/css" />
+}
 <div class="row">
     <span> @Html.DisplayFor(m => m.Lesson.Subject)</span>
 </div>
@@ -12,15 +14,9 @@
 </div>
 
 <!-- Progress -->
-<div class="row progress">
-    <div class="progress-bar" role="progressbar"
-         style="width: @Model.Status%"
-         aria-valuenow="@Model.Status"
-         aria-valuemin="0"
-         aria-valuemax="100"></div>
-</div>
+<partial name="_PartialLessonOverview" model="@Model.Lesson" />
 
-<div class="row border" >
+<div class="row border">
     <div class="col-md-8">
         <h3>Content</h3>
     </div>
