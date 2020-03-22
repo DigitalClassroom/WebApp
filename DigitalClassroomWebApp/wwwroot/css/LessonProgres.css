@@ -4,8 +4,8 @@
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    border: 2px solid dodgerblue;
-    background-color: white;
+    border: 2px solid #CBCBCB;
+    background-color: #CBCBCB;
 }
 
 .Chapter {
@@ -14,22 +14,37 @@
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    border: 2px solid dodgerblue;
-    background-color: white;
+    border: 2px solid #CBCBCB;
+    background-color: #CBCBCB;
 }
 
 .Done {
-    background-color: dodgerblue;
+    background-color: #97A8E0;
+    border: #97A8E0;
 }
 
-.Bar {
+.ProgressBarContainer {
     position: relative;
     top: -20px;
     height: 8px;
-    background-color: dodgerBlue;
+    width: 100%;
+    background-color: #CBCBCB;
     z-index: -100;
     align-self: center;
     justify-self: right;
+}
+
+.BarSuccess {
+    height: 8px;
+    float: left;
+    background-color: #97A8E0;
+}
+
+.BarUnsuccess {
+    width: auto;
+    height: 8px;
+    background-color: #CBCBCB;
+    overflow: hidden;
 }
 
 

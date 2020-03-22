@@ -4,34 +4,40 @@
     ViewData["Title"] = "Lesson Page";
 }
 
-<div>
-    <div>
-        <span> @Html.DisplayFor(m => m.Subject)</span>
-    </div>
-    <div>
-        <span>bei @Html.DisplayFor(m => m.Teacher)</span>
-    </div>
+<link rel="stylesheet" href="~/css/PupilsPage.css" type="text/css" />
 
 
-    <h1>Unterrichtsstunde @Html.DisplayFor(m => m.Title)</h1>
-    <h2>Klasse: @Html.DisplayFor(m => m.Class)</h2>
+<div class="SubjectHeader">
+    <span class="SubjectLabel"> @Html.DisplayFor(m => m.Subject)</span>
+</div>
+
+<div class="BigBox" style="border-radius:25px; background-color: #F5F4F4" >
+    <div style="padding:30px 20px 20px 15px">
+        <div style="text-align:right">
+            <span style="font-size:20pt; font-weight:700; color:#434343">bei @Html.DisplayFor(m => m.Teacher)</span>
+        </div>
 
 
-    <table>
-        <thead>
-            <tr>
-                <th>Aufgabe</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var c in Model.Chapter)
-            {
+        <h1>@Html.DisplayFor(m => m.Title)</h1>
+        <h2>Klasse: @Html.DisplayFor(m => m.Class)</h2>
+
+
+        <table>
+            @*<thead>
                 <tr>
-                    <td>
-                        <a asp-action="Chapter" asp-controller="Lesson" asp-route-id="@c.Id">@c.Title</a>
-                    </td>
+                    <th>Aufgabe</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>*@
+            <tbody>
+                @foreach (var c in Model.Chapter)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Chapter" asp-controller="Lesson" asp-route-id="@c.Id">@c.Title</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
