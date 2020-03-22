@@ -1,0 +1,82 @@
+﻿html {
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+body {
+    height: 100%;
+    padding-bottom: 70px;
+}
+
+.container {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.main {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 2fr 2fr;
+    grid-template-rows: auto 3fr 2fr 3fr;
+    align-self: stretch;
+}
+
+    .main .caption {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+.caption {
+    color: white;
+    background-color: dodgerblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.main .schedule {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.main .notifications {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.main .runningDate {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.main .classOverview {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.main .calendar {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.border {
+    margin: 5px;
+    border-radius: 10px;
+}
