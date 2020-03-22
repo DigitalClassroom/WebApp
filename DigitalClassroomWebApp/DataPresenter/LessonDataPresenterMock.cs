@@ -18,8 +18,8 @@ namespace DigitalClassroomWebApp.DataPresenter
                 Id = id++,
                 Teacher = "Frau Schütze",
                 Subject = "Biologie",
-                Title = "Synapsen",
-                Class = "5a",
+                Title = "Aufbau einer Nervenzelle",
+                Class = "7c",
             };
 
             this.demoLesson.Chapter.Add(new LessonChapter()
@@ -64,6 +64,7 @@ namespace DigitalClassroomWebApp.DataPresenter
                 Chapter = this.demoLesson.Chapter.Last(),
                 Id = id++,
                 Title = "Aufgabe 2",
+                Done = true,
             });
 
             this.demoLesson.Chapter.Last().Tasks.Add(new LessonChapterTask()
