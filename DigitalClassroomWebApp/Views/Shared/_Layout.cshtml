@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="~/img/Logo_Projekt_02.svg" height="64"/>
+                    <img src="~/img/Logo_Projekt_02.svg" height="64" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -30,22 +30,23 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </header>*@
-        <div class="container d-flex flex-column">
-            @RenderBody()
-        </div>
-
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2020 - DigitalClassroom - Build: @Program.GetCurrentBuildVersionString()
             </div>
-        </footer>
+        </nav>
+    </header>
+    <div class="container d-flex flex-column">
+        @RenderBody()
+    </div>
 
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - DigitalClassroom - Build: @Program.GetCurrentBuildVersionString()
+        </div>
+    </footer>
 
-        @RenderSection("Scripts", required: false)
-    </body> 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
 </html>
