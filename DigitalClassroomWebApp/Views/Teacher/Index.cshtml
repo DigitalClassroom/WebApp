@@ -1,0 +1,28 @@
+﻿@using DigitalClassroomWebApp.Models
+@model TeacherDashboard
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@section Styles{
+    <link href="~/css/Dashboard.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="border main flex-grow-1 flex-fill">
+    <h1 class="caption">Dashboard</h1>
+    <div class="border schedule">
+        <h5 class="caption">Stundenplan</h5>
+        <partial name="_PartialSchedule" model="@Model.Schedules" />
+    </div>
+    <div class="border notifications">
+        <h5 class="caption">Meldungen</h5>
+    </div>
+    <div class="border runningDate">
+        <h5 class="caption">Laufender Sprechstundentermin</h5>
+    </div>
+    <div class="border classOverview">
+        <h5 class="caption">Meine Klassen</h5>
+    </div>
+    <div class="border calendar">
+        <h5 class="caption">Kalender</h5>
+    </div>
+</div>
