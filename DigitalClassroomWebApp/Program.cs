@@ -33,8 +33,8 @@ namespace DigitalClassroomWebApp
             DateTime buildTime = DateTime.Now;
             try
             {
-                FileInfo fi = new FileInfo(Assembly.GetExecutingAssembly().Location + ".dll");
-                buildTime = fi.CreationTime;
+                FileInfo fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
+                buildTime = fi.LastWriteTime;
             }
             catch
             {
