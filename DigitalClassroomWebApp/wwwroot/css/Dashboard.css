@@ -8,11 +8,6 @@ body {
     padding-bottom: 70px;
 }
 
-.container {
-    min-height: 100%;
-    overflow: hidden;
-}
-
 .main {
     position: relative;
     top: 0px;
@@ -25,16 +20,16 @@ body {
     align-self: stretch;
 }
 
-    .main .caption {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
+.main .caption {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
 
 .caption {
     color: white;
-    background-color: dodgerblue;
+    background-color: #97A8E0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;
@@ -79,4 +74,107 @@ body {
 .border {
     margin: 5px;
     border-radius: 10px;
+}
+
+.scheduleMain {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
+    column-gap: 4px;
+    justify-content: stretch;
+}
+
+.header {
+    grid-row: 1 / span 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #97A8E0;
+    text-align: center;
+    color: white;
+    border: 1px solid #97A8E0;
+}
+
+.contentPane {
+    grid-row: 2 / span 7;
+    text-align: center;
+    border-left: 1px solid #97A8E0;
+    border-right: 1px solid #97A8E0;
+}
+
+.rowLine {
+    border-top: 1px solid #97A8E0;
+    grid-column: 2 / span 5;
+}
+
+.item {
+    text-align: center;
+    margin: 1px 1px 0px 1px;
+}
+
+.rh {
+    margin-left: 5px;
+    position: relative;
+    top: -25%;
+}
+
+.Monday {
+    grid-column: 2 /span 1;
+}
+
+.Tuesday {
+    grid-column: 3 /span 1;
+}
+
+.Wednesday {
+    grid-column: 4 /span 1;
+}
+
+.Thursday {
+    grid-column: 5 /span 1;
+}
+
+.Friday {
+    grid-column: 6 /span 1;
+}
+
+.t1 {
+    grid-row: 2 / span 1;
+}
+
+.t2 {
+    grid-row: 3 / span 1;
+}
+
+.t3 {
+    grid-row: 4 / span 1;
+}
+
+.t4 {
+    grid-row: 5 / span 1;
+}
+
+.t5 {
+    grid-row: 6 / span 1;
+}
+
+.t6 {
+    grid-row: 7 / span 1;
+}
+
+.t7 {
+    grid-row: 8 / span 1;
+}
+
+.t8 {
+    grid-row: 9 /span 1;
+    top: -60%;
+}
+
+.Aqua {
+    background-color: aqua;
+}
+
+.Lime {
+    background-color: lightgreen;
 }

@@ -1,5 +1,5 @@
 ﻿@using DigitalClassroomWebApp.Models
-@model Lesson
+@model TeacherDashboard
 @{
     ViewData["Title"] = "Dashboard";
 }
@@ -11,6 +11,7 @@
     <h1 class="caption">Dashboard</h1>
     <div class="border schedule">
         <h5 class="caption">Stundenplan</h5>
+        <partial name="_PartialSchedule" model="@Model.Schedules" />
     </div>
     <div class="border notifications">
         <h5 class="caption">Meldungen</h5>

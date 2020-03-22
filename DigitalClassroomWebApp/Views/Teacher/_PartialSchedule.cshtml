@@ -1,0 +1,58 @@
+﻿@using DigitalClassroomWebApp.Models;
+@model IEnumerable<ScheduleItem>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="scheduleMain">
+    <div class="header Monday">
+        <h5>Montag</h5>
+    </div>
+    <div class="contentPane Monday"></div>
+
+    <div class="header Tuesday">
+        <h5>Dienstag</h5>
+    </div>
+    <div class="contentPane Tuesday"></div>
+
+    <div class="header Wednesday">
+        <h5>Mittwoch</h5>
+    </div>
+    <div class="contentPane Wednesday"></div>
+
+    <div class="header Thursday">
+        <h5>Donnerstag</h5>
+    </div>
+    <div class="contentPane Thursday"></div>
+
+    <div class="header Friday">
+        <h5>Freitag</h5>
+    </div>
+    <div class="contentPane Friday"></div>
+
+    <div class="rh t1"><small>08:00</small></div>
+    <div class="rowLine t1"></div>
+    <div class="rh t2"><small>09:00</small></div>
+    <div class="rowLine t2"></div>
+    <div class="rh t3"><small>10:00</small></div>
+    <div class="rowLine t3"></div>
+    <div class="rh t4"><small>11:00</small></div>
+    <div class="rowLine t4"></div>
+    <div class="rh t5"><small>12:00</small></div>
+    <div class="rowLine t5"></div>
+    <div class="rh t6"><small>13:00</small></div>
+    <div class="rowLine t6"></div>
+    <div class="rh t7"><small>14:00</small></div>
+    <div class="rowLine t7"></div>
+    <div class="rh t8"><small>15:00</small></div>
+    <div class="rowLine t8"></div>
+
+    @foreach (var item in Model)
+    {
+        string classTag = $"item t{item.TimeSlot} {item.DayOfWeek} {item.CssTag}";
+
+        <div class="@classTag">
+            @Html.Raw(@item.Title.Replace("\n", "<br />\n\r"))
+        </div>
+    }
+</div>
