@@ -23,14 +23,28 @@
     border: #97A8E0;
 }
 
-.Bar {
+.ProgressBarContainer {
     position: relative;
     top: -20px;
     height: 8px;
-    background-color: #97A8E0;
+    width: 100%;
+    background-color: #CBCBCB;
     z-index: -100;
     align-self: center;
     justify-self: right;
+}
+
+.BarSuccess {
+    height: 8px;
+    float: left;
+    background-color: #97A8E0;
+}
+
+.BarUnsuccess {
+    width: auto;
+    height: 8px;
+    background-color: #CBCBCB;
+    overflow: hidden;
 }
 
 
